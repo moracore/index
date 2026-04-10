@@ -1,0 +1,157 @@
+:root {
+  /* Accent — overridden at runtime */
+  --clr-base:       #7c5cf6;
+  --clr-base-light: #9b82f8;
+  --clr-base-dark:  #5e3fd4;
+  --clr-base-dim:   rgba(124, 92, 246, 0.15);
+
+  /* Surfaces */
+  --clr-bg:             #111111;
+  --clr-surface:        #1a1a1a;
+  --clr-surface-raised: #222222;
+  --clr-surface-overlay:#2a2a2a;
+  --clr-surface-modal:  #1d1d1d;
+
+  /* Borders — solid, no transparency */
+  --clr-border:         #2c2c2c;
+  --clr-border-strong:  #3a3a3a;
+
+  /* Text */
+  --clr-text:       #e8e8e8;
+  --clr-text-sec:   #808080;
+  --clr-text-muted: #4a4a4a;
+
+  /* Semantic */
+  --clr-success: #3fb950;
+  --clr-danger:  #f85149;
+
+  /* Radii */
+  --r-sm:  5px;
+  --r-md:  8px;
+  --r-lg:  12px;
+  --r-xl:  18px;
+  --r-full: 100px;
+
+  /* Spacing */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 24px;
+
+  /* Font sizes */
+  --fs-xs:  0.68rem;
+  --fs-sm:  0.78rem;
+  --fs-md:  0.9rem;
+  --fs-lg:  1.05rem;
+  --fs-xl:  1.3rem;
+  --fs-2xl: 1.65rem;
+
+  /* Transitions */
+  --dur-fast:    120ms;
+  --dur-mid:     220ms;
+  --dur-slow:    350ms;
+  --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 14px rgba(0,0,0,0.6);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.7);
+
+  /* Layout */
+  --header-height: 50px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top:    env(safe-area-inset-top, 0px);
+}
+
+[data-theme="light"] {
+  --clr-bg:             #f2f2f2;
+  --clr-surface:        #ffffff;
+  --clr-surface-raised: #f7f7f7;
+  --clr-surface-overlay:#eeeeee;
+  --clr-surface-modal:  #ffffff;
+  --clr-border:         #e0e0e0;
+  --clr-border-strong:  #cccccc;
+  --clr-text:           #111111;
+  --clr-text-sec:       #555555;
+  --clr-text-muted:     #999999;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 14px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: var(--fs-md);
+  color: var(--clr-text);
+  background: var(--clr-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--clr-base);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* ── Animations ─────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes sheetUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
